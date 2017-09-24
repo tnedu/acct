@@ -1,6 +1,6 @@
 #' Round Numbers
 #'
-#' Does not handle round of .5 in the usual R way.
+#' Does not handle rounding of .5 in the usual R way.
 #'
 #' @param x A vector of numeric values.
 #' @param digits Number of decimal places. Defaults to 0 (round to the whole number).
