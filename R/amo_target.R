@@ -18,7 +18,7 @@ amo_target <- function(n, pct, double = FALSE) {
         denom <- 8
     }
 
-    ifelse(n >= 30, round(pct + (100 - pct)/denom, 1), NA_real_)
+    ifelse(n >= 30, round5(pct + (100 - pct)/denom, 1), NA_real_)
 }
 
 amo_reduction <- function(n, pct, double = FALSE) {
