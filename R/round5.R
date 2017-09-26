@@ -13,8 +13,5 @@
 #' round5(.5 + -2:4) # -2  -1  1  2  3  4  5
 #'
 round5 = function(x, digits = 0) {
-    z <- abs(x) * (10 ^ digits) + 0.5
-    z <- trunc(z)/(10 ^ digits)
-
-    sign(x) * z
+    round(x + 1e-10, digits)
 }
