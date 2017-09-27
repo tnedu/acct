@@ -12,7 +12,7 @@ round5(x, digits = 0)
 \item{digits}{Number of decimal places. Defaults to 0 (round to the whole number).}
 }
 \description{
-Does not handle round of .5 in the usual R way.
+Does not handle rounding of .5 in the usual R way.
 }
 \examples{
 

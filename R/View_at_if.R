@@ -14,7 +14,6 @@
 #' )
 #'
 #' View_if(df, x == "A")
-#'
 #' View_at(df, x, z)
 #'
 View_at <- function(df, ...) {
