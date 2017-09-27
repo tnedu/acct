@@ -7,5 +7,7 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 RoxygenNote: 6.0.1
-Suggests: 
+Imports:
+    dplyr
+Suggests:
     testthat
