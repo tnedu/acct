@@ -2,7 +2,7 @@
 % Please edit documentation in R/lower_upper_bound_ci.R
 \name{ci_lower_bound}
 \alias{ci_lower_bound}
-\title{Calculate Upper/Lower Bound Confidence Intervals}
+\title{Calculate Upper/Lower Bound Confidence Intervals for Accountability}
 \usage{
 ci_lower_bound(n, pct)
 }
@@ -12,8 +12,11 @@ ci_lower_bound(n, pct)
 \item{pct}{A percentage (Percent On Track/Mastered, Chronic Absenteeism, etc.).}
 }
 \description{
-Calculate Upper/Lower Bound Confidence Intervals
+Calculate Upper/Lower Bound Confidence Intervals for Accountability
 }
 \examples{
+
+ci_upper_bound(n = 10, pct = 50)
+ci_lower_bound(n = 10, pct = 50)
 
 }

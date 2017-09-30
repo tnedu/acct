@@ -7,7 +7,8 @@
 amo_target(n, pct, double = FALSE)
 }
 \arguments{
-\item{n}{A count (valid tests, enrolled, etc.).}
+\item{n}{A count (valid tests, enrolled, etc.). Targets are only calculated if
+count is 30 or greater.}
 
 \item{pct}{A percentage (Percent On Track/Mastered, Chronic Absenteeism, etc.).}
 
@@ -18,5 +19,11 @@ Family of functions for calcuating AMO targets. Includes functions for
 AMO reduction targets and double AMO targets.
 }
 \examples{
+
+amo_target(n = 30, pct = 36)
+
+# Equivalent
+amo_reduction(n = 50, pct = 20.7, double = TRUE)
+amo_reduction_double(n = 50, pct = 20.7)
 
 }
