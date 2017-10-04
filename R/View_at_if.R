@@ -1,21 +1,16 @@
 #' View a subset of a data frame.
 #'
 #' @param df A data frame.
-#' @param ... An unquoted set of variables.
+#' @param ... An unquoted set of variables, passed to dplyr::select.
 #'
 #' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
 #'
-#' df <- data.frame(
-#'     x = sample(LETTERS, 1000, replace = TRUE),
-#'     y = rnorm(1000),
-#'     z = rnorm(1000)
-#' )
+#' View_at(iris, Species, Sepal.Length, Petal.Length)
 #'
-#' View_at(df, x, z)
-#'
+
 View_at <- function(df, ...) {
     dplyr::select(df, ...) %>%
         View()
@@ -24,21 +19,14 @@ View_at <- function(df, ...) {
 #' View a subset of rows from a data frame.
 #'
 #' @param df A data frame.
-#' @param ... A logical condition.
+#' @param ... A logical condition, passed to dplyr::filter. Multiple conditions are combined with &.
 #'
 #' @importFrom magrittr %>%
 #' @export
 #'
 #' @examples
 #'
-#' df <- data.frame(
-#'     x = sample(LETTERS, 1000, replace = TRUE),
-#'     y = rnorm(1000),
-#'     z = rnorm(1000)
-#' )
-#'
-#' View_if(df, x == "A")
-#'
+#' View_if(iris, Species == "setosa")
 
 View_if <- function(df, ...) {
     dplyr::filter(df, ...) %>%

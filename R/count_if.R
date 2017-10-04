@@ -1,7 +1,7 @@
 #' Count Observations in a Data Frame Meeting a Condition
 #'
 #' @param df A data frame.
-#' @param ... A logical condition. Multiple conditions are combined with &.
+#' @param ... A logical condition, passed to dplyr::filter. Multiple conditions are combined with &.
 #'
 #' @importFrom magrittr %>%
 #' @export
