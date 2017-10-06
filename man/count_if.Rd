@@ -9,7 +9,7 @@ count_if(df, ...)
 \arguments{
 \item{df}{A data frame.}
 
-\item{...}{A logical condition. Multiple conditions are combined with &.}
+\item{...}{A logical condition, passed to dplyr::filter. Multiple conditions are combined with &.}
 }
 \description{
 Count Observations in a Data Frame Meeting a Condition

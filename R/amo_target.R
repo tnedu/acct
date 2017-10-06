@@ -7,6 +7,7 @@
 #' count is 30 or greater.
 #' @param pct A percentage (Percent On Track/Mastered, Chronic Absenteeism, etc.).
 #' @param double Calculate double AMO target? Defaults to FALSE.
+#' @param n_minimum Minimum N count to calculate AMO target. Defaults to 30.
 #'
 #' @export
 #'
@@ -18,34 +19,34 @@
 #' amo_reduction(n = 50, pct = 20.7, double = TRUE)
 #' amo_reduction_double(n = 50, pct = 20.7)
 #'
-amo_target <- function(n, pct, double = FALSE) {
+amo_target <- function(n, pct, double = FALSE, n_minimum = 30) {
     if (!double) {
         denom <- 16
     } else {
         denom <- 8
     }
 
-    ifelse(n >= 30, round5(pct + (100 - pct)/denom, 1), NA_real_)
+    ifelse(n >= n_minimum, round5(pct + (100 - pct)/denom, 1), NA_real_)
 }
 
 #' @export
-amo_reduction <- function(n, pct, double = FALSE) {
+amo_reduction <- function(n, pct, double = FALSE, n_minimum = 30) {
     if (!double) {
         denom <- 16
     } else {
         denom <- 8
     }
 
-    ifelse(n >= 30, round5(pct - pct/denom, 1), NA_real_)
+    ifelse(n >= n_minimum, round5(pct - pct/denom, 1), NA_real_)
 }
 
 #' @export
-amo_reduction_double <- function(n, pct, double = FALSE) {
+amo_reduction_double <- function(n, pct, double = FALSE, n_minimum = 30) {
     if (!double) {
         denom <- 8
     } else {
         denom <- 4
     }
 
-    ifelse(n >= 30, round5(pct - pct/denom, 1), NA_real_)
+    ifelse(n >= n_minimum, round5(pct - pct/denom, 1), NA_real_)
 }

@@ -9,19 +9,13 @@ View_at(df, ...)
 \arguments{
 \item{df}{A data frame.}
 
-\item{...}{An unquoted set of variables.}
+\item{...}{An unquoted set of variables, passed to dplyr::select.}
 }
 \description{
 View a subset of a data frame.
 }
 \examples{
 
-df <- data.frame(
-    x = sample(LETTERS, 1000, replace = TRUE),
-    y = rnorm(1000),
-    z = rnorm(1000)
-)
-
-View_at(df, x, z)
+View_at(iris, Species, Sepal.Length, Petal.Length)
 
 }

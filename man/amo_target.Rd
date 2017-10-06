@@ -4,7 +4,7 @@
 \alias{amo_target}
 \title{Calculate AMO Targets}
 \usage{
-amo_target(n, pct, double = FALSE)
+amo_target(n, pct, double = FALSE, n_minimum = 30)
 }
 \arguments{
 \item{n}{A count (valid tests, enrolled, etc.). Targets are only calculated if
@@ -13,6 +13,8 @@ count is 30 or greater.}
 \item{pct}{A percentage (Percent On Track/Mastered, Chronic Absenteeism, etc.).}
 
 \item{double}{Calculate double AMO target? Defaults to FALSE.}
+
+\item{n_minimum}{Minimum N count to calculate AMO target. Defaults to 30.}
 }
 \description{
 Family of functions for calcuating AMO targets. Includes functions for
