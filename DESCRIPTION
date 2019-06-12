@@ -1,13 +1,14 @@
 Package: acct
-Version: 0.0.0.9000
+Version: 0.1.0
 Title: Frequently Used Accountability Functions
 Authors@R: person("Alexander", "Poon", email = "alex.poon@tn.gov", role = c("aut", "cre"))
 License: MIT
 Encoding: UTF-8
 LazyData: true
 ByteCompile: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 Imports: 
+    purrr,
     dplyr,
     magrittr
 Suggests:
