@@ -16,8 +16,8 @@
 #' @export
 
 
-agg_sums_means <- function(df, sum_cols, mean_cols, ...){
-    if (length(sum_cols) > 0){
+agg_sums_means <- function(df, sum_cols, mean_cols, ...) {
+    if (length(sum_cols) > 0) {
         sum_df <- df %>%
             group_by(...) %>%
             summarise_at(
@@ -28,7 +28,7 @@ agg_sums_means <- function(df, sum_cols, mean_cols, ...){
     } else {
         sum_df <- data.frame()
     }
-    if(length(mean_cols) > 0){
+    if (length(mean_cols) > 0) {
         mean_df <- df %>%
             group_by(...) %>%
             summarise_at(
@@ -39,7 +39,7 @@ agg_sums_means <- function(df, sum_cols, mean_cols, ...){
     } else {
         mean_df <- data.frame()
     }
-    if (length(sum_df) > 0 & length(mean_df) > 0){
+    if (length(sum_df) > 0 & length(mean_df) > 0) {
         return(sum_df %>%
                    left_join(mean_df, by = ))
     } else if (length(mean_df) > 0) {
