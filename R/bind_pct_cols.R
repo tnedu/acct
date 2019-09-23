@@ -18,6 +18,7 @@ bind_pct_cols <- function(df, numerator_cols, denom_col){
             .vars = numerator_cols,
             .funs = list(pct = ~ round(. / (!!as.name(denom_col)) * 100 + 1e-10, 1))
         ) %>%
+        # pct is added as a suffix. Renaming columns so that pct is a prefix
         rename_at( vars( contains( "_pct") ), list( ~paste("pct", gsub("_pct|n_", "", .), sep = "_") ) )
     return(out_df)
 }

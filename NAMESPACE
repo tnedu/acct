@@ -2,7 +2,7 @@
 
 export(View_at)
 export(View_if)
-export(agg_sums_means)
+export(aggregate)
 export(amo_reduction)
 export(amo_reduction_double)
 export(amo_target)

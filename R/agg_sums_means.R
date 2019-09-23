@@ -3,20 +3,28 @@
 #' This function takes a student level dataframe and aggregates it to the school/district/state level.
 #' Provides sums and means for desired columns.
 #' @param df Dataframe. Used first to be friendly to the \%>\% operator.
-#' @param sum_cols A character vector of the columns to be summed.
+#' @param sum_cols A character vector of the columns to be summed. Default is empty vector.
 #' @param mean_cols A character vector of the columns to find the mean. Use empty vector if no desired mean columns.
+#' Default is empty vector.
 #' @param ... The columns to aggregate at (e.g. system, system_name, school, school_name)
 #' @return Returns a dataframe grouped by specified fields.
 #' @keywords aggregate, group, collapse
 #' @examples
-#' agg_student_level(student_level_df, c('enrolled', 'tested', 'valid tests'),
+#' aggregate(student_level_df, c('enrolled', 'tested', 'valid tests'),
 #' c(), system, system_name, subgroup)
-#' agg_student_level(student_level_df, c('enrolled', 'tested', 'valid tests'),
+#' aggregate(student_level_df, c('enrolled', 'tested', 'valid tests'),
 #' c(), system, school, subgroup)
 #' @export
 
 
-agg_sums_means <- function(df, sum_cols, mean_cols, ...) {
+aggregate <- function(df, sum_cols = c(), mean_cols = c(), ...) {
+
+    if (!typeof(sum_cols) %in% c("list", "character", 'NULL')){
+        stop('Invalid argument for sum_cols. Please use character vector or columns by using vars().')
+    }
+    if (!typeof(mean_cols) %in% c("list", "character", 'NULL')){
+        stop('Invalid argument for mean_cols. Please use character vector or columns by using vars().')
+    }
     if (length(sum_cols) > 0) {
         sum_df <- df %>%
             group_by(...) %>%
