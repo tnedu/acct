@@ -2,9 +2,11 @@
 
 export(View_at)
 export(View_if)
+export(aggregate)
 export(amo_reduction)
 export(amo_reduction_double)
 export(amo_target)
+export(bind_pct_cols)
 export(ci_lower_bound)
 export(ci_upper_bound)
 export(count_distinct)
